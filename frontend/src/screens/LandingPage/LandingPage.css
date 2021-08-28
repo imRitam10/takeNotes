@@ -12,7 +12,7 @@
   font-size: 30px;
   padding: 10px;
   color: rgb(26, 98, 206);
-  font-weight: 700;
+  font-weight: 600;
 }
 .intro-text {
   width: 100%;
@@ -20,9 +20,16 @@
 }
 h1 {
   font-family: "Work Sans", sans-serif;
-  font-weight: 750;
   /* width: 6em; */
   font-size: 95px;
+  font-weight: bolder;
+  /* margin-top: calc(50vh - 1em); */
+}
+h2 {
+  font-family: "Work Sans", sans-serif;
+  /* width: 6em; */
+  font-size: 35px;
+  font-weight: bold;
   /* margin-top: calc(50vh - 1em); */
 }
 
@@ -99,7 +106,6 @@ h1 {
     background-position: 0 0;
   }
 }
-
 .buttonContainer {
   margin-top: 50px;
   display: flex;
@@ -109,7 +115,6 @@ h1 {
 .landingbutton {
   width: 200px;
   height: 55px;
-  font-weight: 750%;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -122,8 +127,11 @@ h1 {
 }
 
 @media only screen and (max-width: 768px) {
-  .title {
-    font-size: 60px;
+  .h1 {
+    font-size: 50px;
+  }
+  .h2 {
+    font-size: 25px;
   }
   .landingbutton {
     width: 150px;
