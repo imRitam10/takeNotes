@@ -1,0 +1,132 @@
+.main {
+  min-height: 79vh;
+  display: flex;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1471970394675-613138e45da3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80");
+  background-position: center;
+  background-size: cover;
+  margin-top: 60px;
+}
+
+.subtitle {
+  font-size: 30px;
+  padding: 10px;
+  color: rgb(26, 98, 206);
+  font-weight: 700;
+}
+.intro-text {
+  width: 100%;
+  text-align: center;
+}
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 750;
+  /* width: 6em; */
+  font-size: 95px;
+  /* margin-top: calc(50vh - 1em); */
+}
+
+/* Style the rainbow text element. */
+.title {
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #ca4246;
+  background-color: #ca4246;
+  background: conic-gradient(
+    hsl(358, 91%, 56%) 16.666%,
+    hsl(13, 92%, 59%) 16.666%,
+    hsl(13, 100%, 64%) 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    rgb(203, 241, 78) 50%,
+    hsl(74, 43%, 54%) 66.666%,
+    hsl(221, 67%, 57%) 66.666%,
+    hsl(221, 81%, 55%) 83.333%,
+    hsl(308, 98%, 63%) 83.333%
+  );
+
+  /* Set thee background size and repeat properties. */
+  background-size: 57%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
+}
+
+/* Add animation on hover. */
+.title:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: -9em 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -14em 1em;
+  }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+
+.buttonContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.landingbutton {
+  width: 200px;
+  height: 55px;
+  font-weight: 750%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .buttonContainer {
+    padding: 0 200px;
+  }
+  .title {
+    padding: 0 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 60px;
+  }
+  .landingbutton {
+    width: 150px;
+    height: 50px;
+  }
+}
