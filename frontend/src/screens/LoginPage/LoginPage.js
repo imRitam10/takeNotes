@@ -91,7 +91,7 @@ const LoginPage = () => {
             <Row>
               <Col style={{ color: "black" }}>
                 New Customer ? No Problem
-                <Link to="/register" style={{ color: "black" }}>
+                <Link to="/register" style={{ color: "blue" }}>
                   {" "}
                   Register Here
                 </Link>
