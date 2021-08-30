@@ -15,6 +15,13 @@ const Header = () => {
       <Container>
         {/* <Navbar.Brand href="/">TakeNote</Navbar.Brand> */}
         <Navbar.Brand>
+          {/* <img
+            alt=""
+            src="./logo.png"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          /> */}
           <Link to="/">TakeNote</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

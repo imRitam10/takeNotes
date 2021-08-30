@@ -625,6 +625,7 @@ progress {
   margin-top: calc(var(--bs-gutter-y) * -1);
   margin-right: calc(var(--bs-gutter-x) * -0.5);
   margin-left: calc(var(--bs-gutter-x) * -0.5);
+  margin-bottom: 10px;
 }
 .row > * {
   -ms-flex-negative: 0;
@@ -1977,7 +1978,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.75rem 1.5rem;
+  /* padding: 0.75rem 1.5rem; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3966,8 +3967,8 @@ fieldset:disabled .btn {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .navbar > .container,
 .navbar > .container-fluid,
