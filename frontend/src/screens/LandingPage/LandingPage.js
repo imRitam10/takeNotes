@@ -16,12 +16,22 @@ const LandingPage = () => {
               </div>
               <div className="buttonContainer">
                 <Link to="/login">
-                  <Button size="lg" className="landingbutton" variant="success">
+                  <Button
+                    size="lg"
+                    className="landingbutton"
+                    variant="success"
+                    style={{ color: "black" }}
+                  >
                     Login
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button size="lg" variant="primary" className="landingbutton">
+                  <Button
+                    size="lg"
+                    variant="warning"
+                    style={{ color: "black" }}
+                    className="landingbutton"
+                  >
                     Signup
                   </Button>
                 </Link>

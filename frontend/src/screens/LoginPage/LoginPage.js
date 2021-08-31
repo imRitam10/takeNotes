@@ -44,7 +44,7 @@ const LoginPage = () => {
       <div
         class="card border-success "
         style={{
-          maxWidth: "50rem",
+          maxWidth: "40rem",
           userSelect: "auto",
           margin: "150px auto",
         }}
@@ -58,7 +58,7 @@ const LoginPage = () => {
 
         <div class="card-body" style={{ userSelect: "auto" }}>
           <Form onSubmit={submitHandler}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-2" controlId="formBasicEmail">
               <Form.Label style={{ color: "black" }}>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -72,7 +72,7 @@ const LoginPage = () => {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-4" controlId="formBasicPassword">
               <Form.Label style={{ color: "black" }}>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -82,7 +82,7 @@ const LoginPage = () => {
               />
             </Form.Group>
 
-            <Button variant="success" type="submit">
+            <Button variant="success" type="submit" style={{ color: "black" }}>
               Submit
             </Button>
             {loading && <Loading />}
@@ -90,7 +90,7 @@ const LoginPage = () => {
             <p> </p>
             <Row>
               <Col style={{ color: "black" }}>
-                New Customer ? No Problem
+                New Here ? No Problem
                 <Link to="/register" style={{ color: "blue" }}>
                   {" "}
                   Register Here
