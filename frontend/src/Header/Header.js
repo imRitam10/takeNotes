@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Form,
@@ -8,22 +8,28 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+import { logout } from "../actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const history = useHistory();
 
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    history.push("/");
+  };
+
+  useEffect(() => {}, [userInfo]);
+
   return (
     <Navbar expand="lg" bg="dark" variant="dark">
       <Container>
-        {/* <Navbar.Brand href="/">TakeNote</Navbar.Brand> */}
         <Navbar.Brand>
-          {/* <img
-            alt=""
-            src="./logo.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          /> */}
           <Link to="/">TakeNote</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -39,7 +45,6 @@ const Header = () => {
           </Nav>
 
           <Nav>
-            {/* <Nav.Link href="/mynotes">My Notes</Nav.Link> */}
             <Nav.Link>
               <Link to="/mynotes">My Notes</Link>
             </Nav.Link>
@@ -47,11 +52,7 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.1">My Profile</NavDropdown.Item>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item
-                onClick={() => {
-                  history.push("/");
-                }}
-              >
+              <NavDropdown.Item onClick={logoutHandler}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
