@@ -1,39 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Accordion, Badge, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import axios from "axios";
-
+import { Link, useHistory } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
+import { useDispatch, useSelector } from "react-redux";
+import { listNotes } from "../../actions/notesActions";
+import Loading from "../../components/loading";
+import ErrorMessage from "../../components/errorMessage";
 
 const MyNotes = () => {
-  const [notes, setNotes] = useState([]);
+  const dispatch = useDispatch();
+  const noteList = useSelector((state) => state.noteList);
+  const { loading, notes, error } = noteList;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const deleteHandler = (id) => {
     if (window.confirm("are you sure?")) {
     }
   };
 
-  const fetchNotes = async () => {
-    const { data } = await axios.get("/api/notes");
-
-    setNotes(data);
-  };
+  const history = useHistory();
   useEffect(() => {
-    fetchNotes();
-  }, []);
+    dispatch(listNotes());
+    if (!userInfo) {
+      history.push("/");
+    }
+  }, [dispatch]);
 
   return (
-    <MainScreen title="Welcome Back Ritam...">
-      <Link to="createnote">
+    <MainScreen title={`Welcome Back ${userInfo.name} `}>
+      <Link to="createnotes">
         <Button
-          style={{ marginleft: 10, marginRight: 6, fontWeight: 750 }}
+          style={{ marginLeft: 10, marginRight: 6, fontWeight: 750 }}
           size="lg"
         >
           Create New Note
         </Button>
       </Link>
 
-      {notes.map((note) => (
+      {loading && <Loading />}
+      {error && <ErrorMessage variant="warning">{error}</ErrorMessage>}
+
+      {notes?.map((note) => (
         <Accordion key={note._id}>
           <Card style={{ margin: 20 }}>
             <Card.Header style={{ display: "flex" }}>
@@ -84,8 +93,11 @@ const MyNotes = () => {
                     {note.content}
                   </h4>
                   <footer className="blockquote-footer">
-                    <p style={{ color: "black", fontWeight: 600 }}>
-                      Created On - data
+                    <p style={{ color: "black", margin: "5px" }}>
+                      Created On{" "}
+                      <cite title="Source Title">
+                        {note.createdAt.substring(0, 10)}
+                      </cite>
                     </p>
                   </footer>
                 </blockquote>
