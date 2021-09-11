@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import MainScreen from "../../components/MainScreen";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { createNoteAction } from "../../actions/notesActions";
 import Loading from "../../components/loading";
 import ErrorMessage from "../../components/errorMessage";
-import ReactMarkdown from "react-markdown";
 
 function CreateNote({ history }) {
   const [title, setTitle] = useState("");
