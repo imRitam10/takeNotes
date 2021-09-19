@@ -1,6 +1,6 @@
 # TakeNote
 
-## It's an Authenticated note taking website using **MongoDB, Express, React, Node _(MERN stack)_ ** _cloudinary_ for image management.
+## It's an Authenticated note taking website using **MongoDB, Express, React, Node _(MERN stack)_** _cloudinary_ for image management.
 
 ##
 
