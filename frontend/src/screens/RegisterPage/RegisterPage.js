@@ -41,7 +41,7 @@ const RegisterPage = ({ history }) => {
       return setPicMessage("Please Select an Image");
     }
     setPicMessage(null);
-    if (pics.type === "image/jpeg" || pics.type === "image/png") {
+    if (pics) {
       const data = new FormData();
       data.append("file", pics);
       data.append("upload_preset", "takenote");
@@ -86,7 +86,7 @@ const RegisterPage = ({ history }) => {
                 value={name}
                 placeholder="please enter your name"
                 onChange={(e) => setName(e.target.value)}
-              />
+              ></Form.Control>
             </Form.Group>
 
             <Form.Group className="mb-2" controlId="regEmail">
@@ -96,7 +96,7 @@ const RegisterPage = ({ history }) => {
                 value={email}
                 placeholder="example123@gmail.com"
                 onChange={(e) => setEmail(e.target.value)}
-              />
+              ></Form.Control>
               <Form.Text className="text-muted">
                 <p> </p>
                 <p>We'll never share your email with anyone else.</p>
@@ -110,7 +110,7 @@ const RegisterPage = ({ history }) => {
                 value={password}
                 placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
-              />
+              ></Form.Control>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="confirmPassword">
@@ -122,7 +122,7 @@ const RegisterPage = ({ history }) => {
                 value={confirmpassword}
                 placeholder="confirm your password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+              ></Form.Control>
             </Form.Group>
             {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
 
@@ -133,10 +133,9 @@ const RegisterPage = ({ history }) => {
               <Form.Control
                 onChange={(e) => postDetails(e.target.files[0])}
                 type="file"
-                // type="image/png"
                 label="Upload Profile Picture"
                 style={{ color: "black" }}
-              />
+              ></Form.Control>
             </Form.Group>
 
             {picMessage && (

@@ -1986,7 +1986,7 @@ progress {
   color: #fff;
   background-color: transparent;
   background-clip: padding-box;
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.678);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -7603,7 +7603,7 @@ fieldset:disabled .btn {
 }
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #010419 !important;
 }
 .bg-black {
   --bs-bg-opacity: 1;
@@ -10459,7 +10459,9 @@ fieldset:disabled .btn {
   }
 }
 body {
-  background-image: linear-gradient(90deg, #33b7e2, #5e62b0, #dc307c);
+  /* background-image: linear-gradient(90deg, #33b7e2, #5e62b0, #dc307c); */
+  /* background-image: linear-gradient(90deg, #02c1ff, #183d928c, rgb(0, 0, 14)); */
+  background-image: linear-gradient(1deg, #00cfffcc, #001276, rgb(0, 0, 0));
 }
 .table-secondary {
   --bs-table-hover-color: $white;
