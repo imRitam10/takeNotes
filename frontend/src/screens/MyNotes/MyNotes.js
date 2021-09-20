@@ -53,7 +53,7 @@ const MyNotes = ({ search }) => {
 
   return (
     <div className="yo">
-      <MainScreen title={`Welcome Back ${userInfo.name} `}>
+      <MainScreen title={`Welcome Back ${userInfo && userInfo.name} `}>
         <Link to="createnotes">
           <Button
             style={{ marginLeft: 10, marginRight: 6, fontWeight: 750 }}
@@ -68,75 +68,76 @@ const MyNotes = ({ search }) => {
         {loading && <Loading />}
         {error && <ErrorMessage variant="warning">{error}</ErrorMessage>}
 
-        {notes
-          ?.reverse()
-          .filter((filteredNote) =>
-            filteredNote.title.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((note) => (
-            <Accordion key={note._id}>
-              <Card style={{ margin: 20 }}>
-                <Card.Header style={{ display: "flex" }}>
-                  <span
-                    style={{
-                      color: "black",
-                      textDecoration: "none",
-                      flex: 1,
-                      cursor: "pointer",
-                      alignSelf: "center",
-                      fontFamily: "Work Sans",
-                    }}
-                  >
-                    <Accordion.Header eventKey="0">
-                      <p style={{ fontSize: "22px" }}>{note.title}</p>
-                    </Accordion.Header>
-                  </span>
-                  <div>
-                    <Button
-                      variant="primary"
-                      size="sm"
-                      style={{ fontSize: "18px", fontWeight: 600 }}
-                      href={`/note/${note._id}`}
+        {notes &&
+          notes
+            .filter((filteredNote) =>
+              filteredNote.title.toLowerCase().includes(search.toLowerCase())
+            )
+            .reverse()
+            .map((note) => (
+              <Accordion key={note._id}>
+                <Card style={{ margin: 20 }}>
+                  <Card.Header style={{ display: "flex" }}>
+                    <span
+                      style={{
+                        color: "black",
+                        textDecoration: "none",
+                        flex: 1,
+                        cursor: "pointer",
+                        alignSelf: "center",
+                        fontFamily: "Work Sans",
+                      }}
                     >
-                      edit
-                    </Button>
-                    <Button
-                      variant="danger"
-                      className="mx-2"
-                      size="sm"
-                      style={{ fontSize: "18px", fontWeight: "600%" }}
-                      onClick={() => deleteHandler(note._id)}
-                    >
-                      delete
-                    </Button>
-                  </div>
-                </Card.Header>
-                <Accordion.Body>
-                  <Card.Body>
-                    <h5>
-                      <Badge style={{ backgroundColor: "green" }}>
-                        Category - {note.category}
-                      </Badge>
-                    </h5>
+                      <Accordion.Header eventKey="0">
+                        <p style={{ fontSize: "22px" }}>{note.title}</p>
+                      </Accordion.Header>
+                    </span>
+                    <div>
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        style={{ fontSize: "18px", fontWeight: 600 }}
+                        href={`/note/${note._id}`}
+                      >
+                        edit
+                      </Button>
+                      <Button
+                        variant="danger"
+                        className="mx-2"
+                        size="sm"
+                        style={{ fontSize: "18px", fontWeight: "600%" }}
+                        onClick={() => deleteHandler(note._id)}
+                      >
+                        delete
+                      </Button>
+                    </div>
+                  </Card.Header>
+                  <Accordion.Body>
+                    <Card.Body>
+                      <h5>
+                        <Badge style={{ backgroundColor: "green" }}>
+                          Category - {note.category}
+                        </Badge>
+                      </h5>
 
-                    <blockquote className="blockquote mb-0">
-                      <h4 variant="success" fontSize="25px">
-                        {note.content}
-                      </h4>
-                      <footer className="blockquote-footer">
-                        <p style={{ color: "black", margin: "5px" }}>
-                          Created On{" "}
-                          <cite title="Source Title">
-                            {note.createdAt.substring(0, 10)}
-                          </cite>
-                        </p>
-                      </footer>
-                    </blockquote>
-                  </Card.Body>
-                </Accordion.Body>
-              </Card>
-            </Accordion>
-          ))}
+                      <blockquote className="blockquote mb-0">
+                        <h4 variant="success" fontSize="25px">
+                          {note.content}
+                        </h4>
+                        <footer className="blockquote-footer">
+                          <p style={{ color: "black", margin: "5px" }}>
+                            Created On{" "}
+                            <cite title="Source Title">
+                              {note.createdAt.substring(0, 10)}
+                            </cite>
+                          </p>
+                        </footer>
+                      </blockquote>
+                    </Card.Body>
+                  </Accordion.Body>
+                </Card>
+              </Accordion>
+            ))}
       </MainScreen>
     </div>
   );
