@@ -19,15 +19,15 @@
   text-align: center;
 }
 h1 {
-  font-family: "Work Sans", sans-serif;
+  font-family: "sans-serif";
   /* width: 6em; */
-  font-size: 95px;
-  font-weight: bolder;
+  font-size: 80px;
+  font-weight: bold;
   /* margin-top: calc(50vh - 1em); */
 }
 h2 {
-  font-family: "Work Sans", sans-serif;
   /* width: 6em; */
+  font-family: "sans-serif";
   font-size: 35px;
   font-weight: bold;
   /* margin-top: calc(50vh - 1em); */
@@ -40,20 +40,22 @@ h2 {
   background: #ca4246;
   background-color: #ca4246;
   background: conic-gradient(
-    hsl(358, 91%, 56%) 16.666%,
-    hsl(13, 92%, 59%) 16.666%,
-    hsl(13, 100%, 64%) 33.333%,
-    #f18f43 33.333%,
-    #f18f43 50%,
-    rgb(203, 241, 78) 50%,
-    hsl(74, 43%, 54%) 66.666%,
-    hsl(221, 67%, 57%) 66.666%,
-    hsl(221, 81%, 55%) 83.333%,
+    hsl(358, 100%, 55%) 16.666%,
+    hsl(13, 100%, 55%) 16.666%,
+    hsla(13, 100%, 50%, 0.89) 33.333%,
+    #ff6f00 33.333%,
+    #ff6f00 50%,
+    rgb(144, 185, 7) 50%,
+    hsl(74, 77%, 43%) 66.666%,
+    hsl(221, 100%, 59%) 66.666%,
+    hsl(221, 100%, 50%) 83.333%,
     hsl(308, 98%, 63%) 83.333%
   );
 
+  /* background: linear-gradient(184deg, #001276, #00d0ff); */
+
   /* Set thee background size and repeat properties. */
-  background-size: 57%;
+  background-size: 60%;
   background-repeat: repeat;
 
   /* Use the text as a mask for the background. */
@@ -77,11 +79,11 @@ h2 {
 /* Animation shown when hovering over the text. */
 @keyframes rainbow-text-animation {
   0% {
-    background-size: 57%;
+    background-size: 53%;
     background-position: 0 0;
   }
   20% {
-    background-size: 57%;
+    background-size: 53%;
     background-position: -9em 1em;
   }
   100% {
@@ -98,11 +100,11 @@ h2 {
     background-position: -9em 1em;
   }
   20% {
-    background-size: 57%;
+    background-size: 53%;
     background-position: 0 1em;
   }
   100% {
-    background-size: 57%;
+    background-size: 53%;
     background-position: 0 0;
   }
 }
@@ -126,15 +128,9 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .h1 {
-    font-size: 50px;
-  }
-  .h2 {
-    font-size: 25px;
-  }
+@media only screen and (max-width: 480px) {
   .landingbutton {
-    width: 150px;
+    width: 120px;
     height: 50px;
   }
 }
