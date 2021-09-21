@@ -106,9 +106,8 @@ const MyNotes = ({ search }) => {
                       <Row>
                         <Button
                           variant="danger"
-                          className="mx-2"
                           size="sm"
-                          style={{ fontSize: "18px", fontWeight: "600%" }}
+                          style={{ fontSize: "18px", fontWeight: 600 }}
                           onClick={() => deleteHandler(note._id)}
                         >
                           delete
