@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Accordion, Badge, Button, Card } from "react-bootstrap";
+import { Accordion, Badge, Button, Card, Row } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 import { useDispatch, useSelector } from "react-redux";
@@ -93,25 +93,25 @@ const MyNotes = ({ search }) => {
                       </Accordion.Header>
                     </span>
                     <div>
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        style={{ fontSize: "18px", fontWeight: 600 }}
-                        href={`/note/${note._id}`}
-                        display="flex"
-                      >
-                        edit
-                      </Button>
-                      <Button
-                        variant="danger"
-                        className="mx-2"
-                        size="sm"
-                        display="flex"
-                        style={{ fontSize: "18px", fontWeight: "600%" }}
-                        onClick={() => deleteHandler(note._id)}
-                      >
-                        delete
-                      </Button>
+                      <Row>
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          style={{ fontSize: "18px", fontWeight: 600 }}
+                          href={`/note/${note._id}`}
+                        >
+                          edit
+                        </Button>
+                        <Button
+                          variant="danger"
+                          className="mx-2"
+                          size="sm"
+                          style={{ fontSize: "18px", fontWeight: "600%" }}
+                          onClick={() => deleteHandler(note._id)}
+                        >
+                          delete
+                        </Button>
+                      </Row>
                     </div>
                   </Card.Header>
                   <Accordion.Body>
