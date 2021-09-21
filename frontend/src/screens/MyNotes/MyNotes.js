@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Accordion, Badge, Button, Card, Row } from "react-bootstrap";
+import { Accordion, Badge, Button, Card, Col, Row } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import MainScreen from "../../components/MainScreen";
 import { useDispatch, useSelector } from "react-redux";
@@ -102,6 +102,8 @@ const MyNotes = ({ search }) => {
                         >
                           edit
                         </Button>
+                      </Row>
+                      <Row>
                         <Button
                           variant="danger"
                           className="mx-2"
