@@ -98,6 +98,7 @@ const MyNotes = ({ search }) => {
                         size="sm"
                         style={{ fontSize: "18px", fontWeight: 600 }}
                         href={`/note/${note._id}`}
+                        display="flex"
                       >
                         edit
                       </Button>
@@ -105,6 +106,7 @@ const MyNotes = ({ search }) => {
                         variant="danger"
                         className="mx-2"
                         size="sm"
+                        display="flex"
                         style={{ fontSize: "18px", fontWeight: "600%" }}
                         onClick={() => deleteHandler(note._id)}
                       >
